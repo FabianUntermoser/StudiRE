@@ -17,7 +17,7 @@
                     <h:outputLabel value="Vorname"/>
                     <h:inputText id="firstName"
                                  value="#{createController.firstName}"
-                                 validatorMessage="Firstname Message">
+                                 validatorMessage="Bitte geben Sie einen Namen ein">
                         <f:validateRequired/>
                     </h:inputText>
                     <h:message for="firstName"/>
@@ -25,7 +25,7 @@
                     <h:outputLabel value="Nachname"/>
                     <h:inputText id="lastName"
                                  value="#{createController.lastName}"
-                                 validatorMessage="LastName Message">
+                                 validatorMessage="Bitte geben Sie einen Nachnamen ein">
                         <f:validateRequired/>
                     </h:inputText>
                     <h:message for="lastName"/>
@@ -45,7 +45,7 @@
                     <h:outputLabel value="Straße"/>
                     <h:inputText id="street"
                                  value="#{createController.street}"
-                                 validatorMessage="street Message">
+                                 validatorMessage="Bitte geben Sie eine Straße mit Hausnummer ein">
                         <f:validateRequired/>
                     </h:inputText>
                     <h:message for="street"/>
@@ -53,7 +53,7 @@
                     <h:outputLabel value="Ort"/>
                     <h:inputText id="location"
                                  value="#{createController.location}"
-                                 validatorMessage="location Message">
+                                 validatorMessage="Bitte geben Sie eine Ortschaft an">
                         <f:validateRequired/>
                     </h:inputText>
                     <h:message for="location"/>
