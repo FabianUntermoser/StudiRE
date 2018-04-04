@@ -1,14 +1,19 @@
 package presentation.controller;
 
 import business.model.Student;
+import business.service.StudentService;
 
 import javax.faces.view.ViewScoped;
+import javax.inject.Inject;
 import javax.inject.Named;
 import java.io.Serializable;
 
 @Named
 @ViewScoped
 public class CreateController implements Serializable {
+
+    @Inject
+    private StudentService studentService;
 
     private String firstName, lastName, street, location, postalCode;
 
@@ -55,5 +60,6 @@ public class CreateController implements Serializable {
     public void create() {
         Student student = new Student(firstName, lastName, Integer.valueOf(postalCode), street, location);
         System.out.println("student created");
+        studentService.addStudent(student);
     }
 }
