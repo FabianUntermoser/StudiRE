@@ -4,6 +4,8 @@ import java.util.Calendar;
 
 public class Student {
 
+    private static int studentCounter = 1;
+
     private long matriculationNumber;
     private String firstName, lastName;
     private Integer postalCode;
@@ -77,8 +79,10 @@ public class Student {
         // get last two digits of current year
         int currentYear = Calendar.getInstance().get(Calendar.YEAR) % 100;
         int uniId = 30;
-        String matriculationNumber = String.valueOf(currentYear) + String.valueOf(uniId);
-        //TODO: auto generate three numbers with JPA
+        String matriculationNumber = String.valueOf(currentYear) +
+                String.valueOf(uniId) +
+                String.format("%03d", studentCounter);
+        studentCounter++;
         return Long.parseLong(matriculationNumber);
     }
 }
