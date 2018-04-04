@@ -19,12 +19,8 @@
                     <h:outputText value="#{student.firstName} #{student.lastName}"/>
                 </h:column>
                 <h:column>
-                    <f:facet name="header">Postleitzahl</f:facet>
-                    <h:outputText value="#{student.postalCode}"/>
-                </h:column>
-                <h:column>
                     <f:facet name="header">Adresse</f:facet>
-                    <h:outputText value="#{student.location} + #{student.street}"/>
+                    <h:outputText value="#{student.postalCode} #{student.location} #{student.street}"/>
                 </h:column>
             </h:dataTable>
         </ui:define>
