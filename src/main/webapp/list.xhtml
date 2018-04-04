@@ -15,12 +15,20 @@
                     <h:outputText value="#{student.matriculationNumber}"/>
                 </h:column>
                 <h:column>
-                    <f:facet name="header">Name</f:facet>
-                    <h:outputText value="#{student.firstName} #{student.lastName}"/>
+                    <f:facet name="header">Nachname</f:facet>
+                    <h:outputText value="#{student.lastName}"/>
                 </h:column>
                 <h:column>
-                    <f:facet name="header">Adresse</f:facet>
-                    <h:outputText value="#{student.postalCode} #{student.location} #{student.street}"/>
+                    <f:facet name="header">Vorname</f:facet>
+                    <h:outputText value="#{student.firstName}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Postleitzahl</f:facet>
+                    <h:outputText value="#{student.postalCode}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Ort</f:facet>
+                    <h:outputText value="#{student.location}, #{student.street}"/>
                 </h:column>
             </h:dataTable>
         </ui:define>
