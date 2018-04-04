@@ -12,7 +12,16 @@ import java.util.List;
 public class StudentService implements Serializable {
 
     public List<Student> getAllStudents() {
+        System.out.println("Students requestd");
         return StudentRepository.getStudents();
+    }
+
+    public void addStudent(Student student) {
+        StudentRepository.addStudent(student);
+    }
+
+    public void removeStudent(Student student) {
+        StudentRepository.removeStudent(student);
     }
 
     @PostConstruct
@@ -21,5 +30,4 @@ public class StudentService implements Serializable {
         StudentRepository.addStudent(new Student("Daniel", "Ertl", 6460, "Street 2", "Tirol"));
         StudentRepository.addStudent(new Student("Oliver", "Guder", 6460, "Street 3", "Tirol"));
     }
-
 }
