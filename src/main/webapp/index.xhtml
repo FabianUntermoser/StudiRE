@@ -9,15 +9,18 @@
     <ui:composition template="/template.xhtml">
         <ui:define name="content">
             <h:form>
-                <div>
-                    <h1>Neuen Studenten anlegen</h1>
-                    <h:commandButton value="Neu" action="#{indexController.createNewStudent}"/>
-                </div>
-
-                <div>
-                    <h1>Alle Studenten anzeigen</h1>
-                    <h:commandButton value="List" action="#{indexController.listStudents}"/>
-                </div>
+                <h1>Willkommen zur Studentenverwaltung!</h1>
+                <p>Hier können Sie:</p>
+                <ul>
+                    <li>
+                        <h:outputLabel for="new-student">Einen neuen Studenten anlegen</h:outputLabel>
+                        <h:commandButton id="new-student" value="Neu" action="#{indexController.createNewStudent}"/>
+                    </li>
+                    <li>
+                        <h:outputLabel for="list-student">Alle Studenten anzeigen</h:outputLabel>
+                        <h:commandButton id="list-student" value="List" action="#{indexController.listStudents}"/>
+                    </li>
+                </ul>
             </h:form>
         </ui:define>
     </ui:composition>
