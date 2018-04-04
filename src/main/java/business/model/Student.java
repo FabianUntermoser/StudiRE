@@ -18,7 +18,6 @@ public class Student {
         this.postalCode = postalCode;
         this.street = street;
         this.location = location;
-        System.out.println("student id: " + matriculationNumber);
     }
 
     public long getMatriculationNumber() {

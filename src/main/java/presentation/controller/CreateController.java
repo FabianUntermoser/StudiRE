@@ -60,7 +60,6 @@ public class CreateController implements Serializable {
 
     public String create() {
         Student student = new Student(firstName, lastName, Integer.valueOf(postalCode), street, location);
-        System.out.println("student created");
         studentService.addStudent(student);
         return "index";
     }

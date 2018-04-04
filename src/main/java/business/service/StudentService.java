@@ -12,7 +12,6 @@ import java.util.List;
 public class StudentService implements Serializable {
 
     public List<Student> getAllStudents() {
-        System.out.println("Students requestd");
         return StudentRepository.getStudents();
     }
 
