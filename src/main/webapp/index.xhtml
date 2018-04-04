@@ -8,7 +8,17 @@
 <f:view contracts="default">
     <ui:composition template="/template.xhtml">
         <ui:define name="content">
-            <h1>Hello World</h1>
+            <h:form>
+                <div>
+                    <h1>Neuen Studenten anlegen</h1>
+                    <h:commandButton value="Neu" action="#{indexController.createNewStudent}"/>
+                </div>
+
+                <div>
+                    <h1>Alle Studenten anzeigen</h1>
+                    <h:commandButton value="List" action="#{indexController.listStudents}"/>
+                </div>
+            </h:form>
         </ui:define>
     </ui:composition>
 </f:view>
