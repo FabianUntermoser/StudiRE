@@ -1,23 +1,13 @@
 package business.model;
 
-import javax.annotation.PostConstruct;
-import javax.enterprise.context.RequestScoped;
-import javax.inject.Named;
-import java.io.Serializable;
-import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
-@RequestScoped
-@Named
-public class Student implements Serializable {
+public class Student {
 
     private long matriculationNumber;
     private String firstName, lastName;
     private Integer postalCode;
     private String street, location;
-
-    public Student() {
-    }
 
     public Student(String firstName, String lastName, Integer postalCode, String street, String location) {
         this.matriculationNumber = generateId();
