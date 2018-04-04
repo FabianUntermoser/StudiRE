@@ -33,8 +33,12 @@
                     <h:outputLabel value="Postleitzahl"/>
                     <h:inputText id="postalCode"
                                  value="#{createController.postalCode}"
-                                 validatorMessage="postalCode Message">
+                                 validatorMessage="Die Postleitzahl muss #{createController.maximumPostalCodeSize} Zeichen lang sein"
+                                 converterMessage="Die Eingabe muss eine Zahl sein">
                         <f:validateRequired/>
+                        <f:convertNumber maxFractionDigits="0" minFractionDigits="0"/>
+                        <f:validateLength minimum="#{createController.maximumPostalCodeSize}"
+                                          maximum="#{createController.maximumPostalCodeSize}"/>
                     </h:inputText>
                     <h:message for="postalCode"/>
 

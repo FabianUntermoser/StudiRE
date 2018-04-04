@@ -11,6 +11,7 @@ import java.io.Serializable;
 @Named
 @ViewScoped
 public class CreateController implements Serializable {
+    private static int maximumPostalCodeSize = 4;
 
     @Inject
     private StudentService studentService;
@@ -61,5 +62,9 @@ public class CreateController implements Serializable {
         Student student = new Student(firstName, lastName, Integer.valueOf(postalCode), street, location);
         System.out.println("student created");
         studentService.addStudent(student);
+    }
+
+    public Integer getMaximumPostalCodeSize() {
+        return maximumPostalCodeSize;
     }
 }
