@@ -5,7 +5,58 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
-<f:view>
-    <h:outputLabel value="create new"/>
+<f:view contracts="default">
+    <ui:composition template="/template.xhtml">
+        <ui:define name="content">
+            <h1>Neuen Studenten anlegen</h1>
+
+            <h:form>
+                <h:panelGrid columns="3">
+                    <f:facet name="header">Neuer Student</f:facet>
+
+                    <h:outputLabel value="Vorname"/>
+                    <h:inputText id="firstName"
+                                 value="#{createController.firstName}"
+                                 validatorMessage="Firstname Message">
+                        <f:validateRequired/>
+                    </h:inputText>
+                    <h:message for="firstName"/>
+
+                    <h:outputLabel value="Nachname"/>
+                    <h:inputText id="lastName"
+                                 value="#{createController.lastName}"
+                                 validatorMessage="LastName Message">
+                        <f:validateRequired/>
+                    </h:inputText>
+                    <h:message for="lastName"/>
+
+                    <h:outputLabel value="Postleitzahl"/>
+                    <h:inputText id="postalCode"
+                                 value="#{createController.postalCode}"
+                                 validatorMessage="postalCode Message">
+                        <f:validateRequired/>
+                    </h:inputText>
+                    <h:message for="postalCode"/>
+
+                    <h:outputLabel value="Straße"/>
+                    <h:inputText id="street"
+                                 value="#{createController.street}"
+                                 validatorMessage="street Message">
+                        <f:validateRequired/>
+                    </h:inputText>
+                    <h:message for="street"/>
+
+                    <h:outputLabel value="Ort"/>
+                    <h:inputText id="location"
+                                 value="#{createController.location}"
+                                 validatorMessage="location Message">
+                        <f:validateRequired/>
+                    </h:inputText>
+                    <h:message for="location"/>
+                </h:panelGrid>
+                <h:commandButton value="Anlegen" action="#{createController.create}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
 </f:view>
 </html>
