@@ -2,23 +2,32 @@ package persistence;
 
 import business.model.Student;
 
+import javax.ejb.Stateless;
+import javax.inject.Inject;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+@Stateless
 public class StudentRepository implements Serializable {
-    private static List<Student> students = new ArrayList<>();
 
-    public static List<Student> getStudents() {
-        return students;
+    @PersistenceContext
+    private EntityManager entityManager;
+
+    public List<Student> getStudents() {
+        TypedQuery<Student> query = entityManager.createNamedQuery(Student.findAll, Student.class);
+        return query.getResultList();
     }
 
-    public static void addStudent(Student student) {
-        students.add(student);
+    public void addStudent(Student student) {
+        entityManager.persist(student);
     }
 
-    public static void removeStudent(Student student) {
-        students.remove(student);
+    public void removeStudent(Student student) {
+        entityManager.remove(student);
     }
 
 }

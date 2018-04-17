@@ -1,15 +1,30 @@
 package business.model;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import java.util.Calendar;
 
+@NamedQueries({
+        @NamedQuery(name = Student.findAll, query = "SELECT s FROM Student s")
+})
+
+@Entity
 public class Student {
+
+    public static final String findAll = "Student.findAll";
 
     private static int studentCounter = 1;
 
+    @Id
     private long matriculationNumber;
     private String firstName, lastName;
     private Integer postalCode;
     private String street, location;
+
+    public Student() {
+    }
 
     public Student(String firstName, String lastName, Integer postalCode, String street, String location) {
         this.matriculationNumber = generateId();
