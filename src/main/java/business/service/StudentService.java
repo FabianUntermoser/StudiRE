@@ -4,11 +4,11 @@ import business.model.Student;
 import persistence.StudentRepository;
 
 import javax.annotation.PostConstruct;
-import javax.enterprise.context.SessionScoped;
+import javax.ejb.Stateless;
 import java.io.Serializable;
 import java.util.List;
 
-@SessionScoped
+@Stateless
 public class StudentService implements Serializable {
 
     public List<Student> getAllStudents() {
