@@ -1,7 +1,7 @@
 package presentation.controller;
 
+import business.domain.Student;
 import business.factories.StudentFactory;
-import business.model.Student;
 import business.service.StudentService;
 
 import javax.ejb.EJB;

@@ -1,6 +1,6 @@
 package presentation.controller;
 
-import business.model.Student;
+import business.domain.Student;
 import business.service.StudentService;
 
 import javax.faces.view.ViewScoped;

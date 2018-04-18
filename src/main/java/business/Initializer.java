@@ -1,7 +1,7 @@
 package business;
 
+import business.domain.Student;
 import business.factories.NextMatriculationNumberGenerator;
-import business.model.Student;
 
 import javax.annotation.PostConstruct;
 import javax.ejb.Singleton;

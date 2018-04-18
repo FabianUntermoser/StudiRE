@@ -1,6 +1,6 @@
 package business.service;
 
-import business.model.Student;
+import business.domain.Student;
 import persistence.StudentRepository;
 
 import javax.ejb.EJB;

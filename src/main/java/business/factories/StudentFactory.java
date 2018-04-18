@@ -1,6 +1,6 @@
 package business.factories;
 
-import business.model.Student;
+import business.domain.Student;
 
 public class StudentFactory {
 

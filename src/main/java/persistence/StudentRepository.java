@@ -1,6 +1,6 @@
 package persistence;
 
-import business.model.Student;
+import business.domain.Student;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
