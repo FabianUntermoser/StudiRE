@@ -1,7 +1,7 @@
 package presentation.controller;
 
 import business.domain.Student;
-import business.service.StudentService;
+import business.service.IStudentService;
 
 import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
@@ -14,7 +14,7 @@ import java.util.List;
 public class ListController implements Serializable {
 
     @Inject
-    private StudentService studentService;
+    private IStudentService studentService;
 
     public List<Student> getStudentList() {
         return studentService.getAllStudents();

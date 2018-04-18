@@ -2,7 +2,7 @@ package presentation.controller;
 
 import business.domain.Student;
 import business.factories.StudentFactory;
-import business.service.StudentService;
+import business.service.IStudentService;
 
 import javax.ejb.EJB;
 import javax.faces.view.ViewScoped;
@@ -15,7 +15,7 @@ public class CreateController implements Serializable {
     private static int maximumPostalCodeSize = 4;
 
     @EJB
-    private StudentService studentService;
+    private IStudentService studentService;
 
     private String firstName, lastName, street, location, postalCode;
 

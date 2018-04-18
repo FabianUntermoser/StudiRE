@@ -7,11 +7,10 @@ import javax.ejb.EJB;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import java.io.Serializable;
 import java.util.List;
 
 @Stateless
-public class StudentService implements Serializable {
+public class StudentService implements IStudentService {
 
     @EJB
     private StudentRepository studentRepository;
@@ -19,19 +18,23 @@ public class StudentService implements Serializable {
     @PersistenceContext
     private EntityManager entityManager;
 
+    @Override
     public List<Student> getAllStudents() {
         studentRepository.setEntityManager(entityManager);
         return studentRepository.getStudents();
     }
 
+    @Override
     public void addStudent(Student student) {
         studentRepository.setEntityManager(entityManager);
         studentRepository.addStudent(student);
     }
 
+    @Override
     public void removeStudent(Student student) {
         studentRepository.setEntityManager(entityManager);
         studentRepository.removeStudent(student);
     }
+
 
 }
