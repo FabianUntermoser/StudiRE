@@ -1,5 +1,6 @@
 package presentation.controller;
 
+import business.factories.StudentFactory;
 import business.model.Student;
 import business.service.StudentService;
 
@@ -59,7 +60,7 @@ public class CreateController implements Serializable {
     }
 
     public String create() {
-        Student student = new Student(firstName, lastName, Integer.valueOf(postalCode), street, location);
+        Student student = StudentFactory.createStudent(firstName, lastName, Integer.valueOf(postalCode), street, location);
         studentService.addStudent(student);
         return "index";
     }

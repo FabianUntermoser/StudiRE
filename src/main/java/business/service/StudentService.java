@@ -3,7 +3,6 @@ package business.service;
 import business.model.Student;
 import persistence.StudentRepository;
 
-import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
 import java.io.Serializable;
@@ -27,10 +26,4 @@ public class StudentService implements Serializable {
         studentRepository.removeStudent(student);
     }
 
-    @PostConstruct
-    private void initializeRepository() {
-        studentRepository.addStudent(new Student("Fabian", "Untermoser", 6460, "Street 1", "Tirol"));
-        studentRepository.addStudent(new Student("Daniel", "Ertl", 6460, "Street 2", "Tirol"));
-        studentRepository.addStudent(new Student("Oliver", "Guder", 6460, "Street 3", "Tirol"));
-    }
 }
