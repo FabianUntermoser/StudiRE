@@ -4,28 +4,20 @@ import business.domain.Student;
 
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
-import java.io.Serializable;
 import java.util.List;
 
-public class StudentRepository implements Serializable {
+public class StudentRepository {
 
-    private EntityManager entityManager;
-
-    public void setEntityManager(EntityManager entityManager) {
-        this.entityManager = entityManager;
-    }
-
-    public List<Student> getStudents() {
+    public static List<Student> getStudents(EntityManager entityManager) {
         TypedQuery<Student> query = entityManager.createNamedQuery(Student.findAll, Student.class);
         return query.getResultList();
     }
 
-    public void addStudent(Student student) {
+    public static void addStudent(EntityManager entityManager, Student student) {
         entityManager.persist(student);
     }
 
-    public void removeStudent(Student student) {
+    public static void removeStudent(EntityManager entityManager, Student student) {
         entityManager.remove(student);
     }
-
 }
