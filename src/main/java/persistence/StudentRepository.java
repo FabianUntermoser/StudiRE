@@ -2,18 +2,18 @@ package persistence;
 
 import business.domain.Student;
 
-import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 import java.io.Serializable;
 import java.util.List;
 
-@Stateless
 public class StudentRepository implements Serializable {
 
-    @PersistenceContext
     private EntityManager entityManager;
+
+    public void setEntityManager(EntityManager entityManager) {
+        this.entityManager = entityManager;
+    }
 
     public List<Student> getStudents() {
         TypedQuery<Student> query = entityManager.createNamedQuery(Student.findAll, Student.class);
