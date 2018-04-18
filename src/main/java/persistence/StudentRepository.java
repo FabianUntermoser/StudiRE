@@ -3,12 +3,10 @@ package persistence;
 import business.model.Student;
 
 import javax.ejb.Stateless;
-import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.List;
 
 @Stateless

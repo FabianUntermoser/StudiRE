@@ -4,15 +4,15 @@ import business.model.Student;
 import persistence.StudentRepository;
 
 import javax.annotation.PostConstruct;
+import javax.ejb.EJB;
 import javax.ejb.Stateless;
-import javax.inject.Inject;
 import java.io.Serializable;
 import java.util.List;
 
 @Stateless
 public class StudentService implements Serializable {
 
-    @Inject
+    @EJB
     private StudentRepository studentRepository;
 
     public List<Student> getAllStudents() {
