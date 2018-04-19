@@ -9,28 +9,33 @@
     <ui:composition template="/template.xhtml">
         <ui:define name="content">
             <h1>Alle Studenten</h1>
-            <h:dataTable value="#{listController.studentList}" var="student">
-                <h:column>
-                    <f:facet name="header">Matrikelnummer</f:facet>
-                    <h:outputText value="#{student.matriculationNumber}"/>
-                </h:column>
-                <h:column>
-                    <f:facet name="header">Nachname</f:facet>
-                    <h:outputText value="#{student.lastName}"/>
-                </h:column>
-                <h:column>
-                    <f:facet name="header">Vorname</f:facet>
-                    <h:outputText value="#{student.firstName}"/>
-                </h:column>
-                <h:column>
-                    <f:facet name="header">Postleitzahl</f:facet>
-                    <h:outputText value="#{student.postalCode}"/>
-                </h:column>
-                <h:column>
-                    <f:facet name="header">Ort</f:facet>
-                    <h:outputText value="#{student.location}, #{student.street}"/>
-                </h:column>
-            </h:dataTable>
+            <h:form>
+                <h:dataTable value="#{listController.studentList}" var="student">
+                    <h:column>
+                        <h:commandLink value="x" actionListener="#{listController.removeStudent(student)}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Matrikelnummer</f:facet>
+                        <h:outputText value="#{student.matriculationNumber}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Nachname</f:facet>
+                        <h:outputText value="#{student.lastName}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Vorname</f:facet>
+                        <h:outputText value="#{student.firstName}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Postleitzahl</f:facet>
+                        <h:outputText value="#{student.postalCode}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Ort</f:facet>
+                        <h:outputText value="#{student.location}, #{student.street}"/>
+                    </h:column>
+                </h:dataTable>
+            </h:form>
         </ui:define>
     </ui:composition>
 </f:view>

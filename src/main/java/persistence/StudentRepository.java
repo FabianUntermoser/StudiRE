@@ -18,6 +18,6 @@ public class StudentRepository {
     }
 
     public static void removeStudent(EntityManager entityManager, Student student) {
-        entityManager.remove(student);
+        entityManager.remove(entityManager.contains(student) ? student : entityManager.merge(student));
     }
 }

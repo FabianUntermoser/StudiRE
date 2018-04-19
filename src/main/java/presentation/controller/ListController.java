@@ -20,4 +20,8 @@ public class ListController implements Serializable {
         return studentService.getAllStudents();
     }
 
+    public void removeStudent(Student student) {
+        studentService.removeStudent(student);
+    }
+
 }
