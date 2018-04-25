@@ -1,10 +1,10 @@
-package business.factories;
+package business.domain;
 
 import java.util.Calendar;
 
 public class NextMatriculationNumberGenerator {
 
-    private static long lastThreeDigits;
+    private static long lastThreeDigits = 100L;
 
     public static void initialize(long lastMatriculationNumber) {
         String numberStr = String.valueOf(lastMatriculationNumber);
@@ -18,7 +18,7 @@ public class NextMatriculationNumberGenerator {
      *
      * @return matriculation Number
      */
-    static long generateNextNumber() {
+    public static long generateNextNumber() {
         // get last two digits of current year
         int currentYear = Calendar.getInstance().get(Calendar.YEAR) % 100;
         int uniId = 30;

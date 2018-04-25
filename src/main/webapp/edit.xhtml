@@ -16,7 +16,7 @@
 
                     <h:outputLabel value="Vorname"/>
                     <h:inputText id="firstName"
-                                 value="#{createController.firstName}"
+                                 value="#{editController.selectedStudent.firstName}"
                                  validatorMessage="Bitte geben Sie einen Namen ein">
                         <f:validateRequired/>
                     </h:inputText>
@@ -24,7 +24,7 @@
 
                     <h:outputLabel value="Nachname"/>
                     <h:inputText id="lastName"
-                                 value="#{createController.lastName}"
+                                 value="#{editController.selectedStudent.lastName}"
                                  validatorMessage="Bitte geben Sie einen Nachnamen ein">
                         <f:validateRequired/>
                     </h:inputText>
@@ -32,19 +32,19 @@
 
                     <h:outputLabel value="Postleitzahl"/>
                     <h:inputText id="postalCode"
-                                 value="#{createController.postalCode}"
-                                 validatorMessage="Die Postleitzahl muss #{createController.maximumPostalCodeSize} Zeichen lang sein"
+                                 value="#{editController.selectedStudent.postalCode}"
+                                 validatorMessage="Die Postleitzahl muss #{editController.maximumPostalCodeSize} Zeichen lang sein"
                                  converterMessage="Die Eingabe muss eine Zahl sein">
                         <f:validateRequired/>
                         <f:convertNumber maxFractionDigits="0" minFractionDigits="0"/>
-                        <f:validateLength minimum="#{createController.maximumPostalCodeSize}"
-                                          maximum="#{createController.maximumPostalCodeSize}"/>
+                        <f:validateLength minimum="#{editController.maximumPostalCodeSize}"
+                                          maximum="#{editController.maximumPostalCodeSize}"/>
                     </h:inputText>
                     <h:message for="postalCode"/>
 
                     <h:outputLabel value="Straße"/>
                     <h:inputText id="street"
-                                 value="#{createController.street}"
+                                 value="#{editController.selectedStudent.street}"
                                  validatorMessage="Bitte geben Sie eine Straße mit Hausnummer ein">
                         <f:validateRequired/>
                     </h:inputText>
@@ -52,13 +52,13 @@
 
                     <h:outputLabel value="Ort"/>
                     <h:inputText id="location"
-                                 value="#{createController.location}"
+                                 value="#{editController.selectedStudent.location}"
                                  validatorMessage="Bitte geben Sie eine Ortschaft an">
                         <f:validateRequired/>
                     </h:inputText>
                     <h:message for="location"/>
                 </h:panelGrid>
-                <h:commandButton value="Anlegen" action="#{createController.create}"/>
+                <h:commandButton value="#{editController.inAddMode ? 'Anlegen' : 'Updaten'}" action="#{editController.create}"/>
             </h:form>
         </ui:define>
     </ui:composition>

@@ -9,7 +9,7 @@ import java.io.Serializable;
 public class IndexController implements Serializable {
 
     public String createNewStudent() {
-        return "create";
+        return "edit";
     }
 
     public String listStudents() {

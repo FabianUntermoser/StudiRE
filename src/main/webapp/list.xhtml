@@ -15,6 +15,9 @@
                         <h:commandLink value="x" actionListener="#{listController.removeStudent(student)}"/>
                     </h:column>
                     <h:column>
+                        <h:commandLink value="update" action="#{listController.updateStudent(student)}"/>
+                    </h:column>
+                    <h:column>
                         <f:facet name="header">Matrikelnummer</f:facet>
                         <h:outputText value="#{student.matriculationNumber}"/>
                     </h:column>
