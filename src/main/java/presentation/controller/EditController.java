@@ -3,6 +3,7 @@ package presentation.controller;
 import business.domain.Student;
 import business.service.IStudentService;
 import presentation.controller.manager.StudentManager;
+import presentation.util.Pages;
 
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
@@ -55,7 +56,7 @@ public class EditController implements Serializable {
             StudentManager.setSelectedStudent(null);
             studentService.updateStudent(selectedStudent);
         }
-        return inAddMode ? "index" : "list";
+        return inAddMode ? Pages.INDEX_PAGE : Pages.LIST_PAGE;
     }
 
     public Integer getMaximumPostalCodeSize() {

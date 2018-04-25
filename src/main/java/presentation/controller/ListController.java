@@ -3,6 +3,7 @@ package presentation.controller;
 import business.domain.Student;
 import business.service.IStudentService;
 import presentation.controller.manager.StudentManager;
+import presentation.util.Pages;
 
 import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
@@ -27,7 +28,7 @@ public class ListController implements Serializable {
 
     public String updateStudent(Student student) {
         StudentManager.setSelectedStudent(student);
-        return "edit";
+        return Pages.EDIT_PAGE;
     }
 
 }

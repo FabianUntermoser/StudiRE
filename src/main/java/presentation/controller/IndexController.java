@@ -1,5 +1,7 @@
 package presentation.controller;
 
+import presentation.util.Pages;
+
 import javax.faces.view.ViewScoped;
 import javax.inject.Named;
 import java.io.Serializable;
@@ -9,11 +11,11 @@ import java.io.Serializable;
 public class IndexController implements Serializable {
 
     public String createNewStudent() {
-        return "edit";
+        return Pages.EDIT_PAGE;
     }
 
     public String listStudents() {
-        return "list";
+        return Pages.LIST_PAGE;
     }
 
 }
