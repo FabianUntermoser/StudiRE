@@ -8,8 +8,11 @@
 <f:view contracts="default">
     <ui:composition template="/template.xhtml">
         <ui:define name="content">
-            <h1>Alle Studenten</h1>
+            <h1>#{listController.filter == null ? 'Alle Studenten' : 'Gefundene Studenten'}</h1>
             <h:form>
+                <h:outputLabel for="filterText"/>
+                <h:inputText id="filterText" value="#{listController.filter}"/>
+                <h:commandButton type="submit" value="Suche"/>
                 <h:dataTable value="#{listController.studentList}" var="student">
                     <h:column>
                         <h:commandLink value="x" actionListener="#{listController.removeStudent(student)}"/>

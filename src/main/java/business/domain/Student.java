@@ -7,14 +7,21 @@ import javax.persistence.NamedQuery;
 
 @NamedQueries({
         @NamedQuery(name = Student.findAll, query = "SELECT s FROM Student s"),
-        @NamedQuery(name = Student.findLastMatriculationNumber, query = "SELECT s.matriculationNumber FROM Student s ORDER BY s.matriculationNumber DESC")
+        @NamedQuery(name = Student.findLastMatriculationNumber, query = "SELECT s.matriculationNumber FROM Student s ORDER BY s.matriculationNumber DESC"),
+        @NamedQuery(
+                name = Student.findByName,
+                query = "SELECT s FROM Student s " +
+                        "WHERE lower(s.firstName) LIKE :name OR lower(s.lastName) LIKE :name " +
+                        "ORDER BY s.matriculationNumber DESC"
+        )
 })
 
 @Entity
 public class Student {
 
-    public static final String findAll = "Student.findAll";
-    public static final String findLastMatriculationNumber = "Student.findLastMatriculationNumber";
+    public static final String findAll = "Student.findAll",
+            findLastMatriculationNumber = "Student.findLastMatriculationNumber",
+            findByName = "Student.findByName";
 
     @Id
     private long matriculationNumber;

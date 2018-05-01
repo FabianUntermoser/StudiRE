@@ -42,6 +42,11 @@ public class StudentService implements IStudentService {
         StudentRepository.updateStudent(entityManager, student);
     }
 
+    @Override
+    public List<Student> getStudentByName(String name) {
+        return StudentRepository.findStudentsByName(entityManager, name);
+    }
+
     private void initializeStudentMatriculationNumber(Student student) {
         if (student.getMatriculationNumber() == 0L) {
             long matriculationNumber = matriculationNumberService.generateNextNumber();

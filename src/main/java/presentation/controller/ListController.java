@@ -15,10 +15,21 @@ import java.util.List;
 @ViewScoped
 public class ListController implements Serializable {
 
+    private String filter;
+
     @Inject
     private IStudentService studentService;
 
+    public String getFilter() {
+        return filter;
+    }
+
+    public void setFilter(String filter) {
+        this.filter = filter;
+    }
+
     public List<Student> getStudentList() {
+        if (filter != null) return studentService.getStudentByName(filter);
         return studentService.getAllStudents();
     }
 

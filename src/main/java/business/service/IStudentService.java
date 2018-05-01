@@ -13,4 +13,6 @@ public interface IStudentService {
     void removeStudent(Student student);
 
     void updateStudent(Student student);
+
+    List<Student> getStudentByName(String name);
 }
