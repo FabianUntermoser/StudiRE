@@ -1,4 +1,4 @@
-package business;
+package business.service;
 
 import business.domain.NextMatriculationNumberGenerator;
 import business.domain.Student;
