@@ -6,9 +6,16 @@
     <security-role>
         <role-name>Teacher</role-name>
     </security-role>
+    <!--<login-config>-->
+        <!--<auth-method>BASIC</auth-method>-->
+        <!--<realm-name>StudiRe - Basic Authentifications</realm-name>-->
+    <!--</login-config>-->
     <login-config>
-        <auth-method>BASIC</auth-method>
-        <realm-name>StudiRe - Basic Authentifications</realm-name>
+        <auth-method>FORM</auth-method>
+        <form-login-config>
+            <form-login-page>/login.xhtml</form-login-page>
+            <form-error-page>/loginError.xhtml</form-error-page>
+        </form-login-config>
     </login-config>
     <security-constraint>
         <web-resource-collection>
