@@ -7,7 +7,6 @@ import javax.inject.Named;
 import java.io.Serializable;
 
 // TODO: Provide Login Page
-// TODO: Use SSL encryption
 
 @Named
 @ViewScoped
