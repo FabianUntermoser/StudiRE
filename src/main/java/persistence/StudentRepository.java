@@ -24,4 +24,10 @@ public class StudentRepository {
     public static void updateStudent(EntityManager entityManager, Student student) {
         entityManager.merge(student);
     }
+
+    public static List<Student> findStudentsByName(EntityManager entityManager, String name) {
+        TypedQuery<Student> query = entityManager.createNamedQuery(Student.findByName, Student.class);
+        query.setParameter("name", "%" + name.toLowerCase() + "%");
+        return query.getResultList();
+    }
 }

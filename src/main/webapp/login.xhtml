@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>StudiRe</title>
+    <meta charset="UTF-8"/>
+    <style type="text/css">
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        #header {
+            padding: 20px;
+            background-color: #92F4C5;
+        }
+
+        #footer {
+            padding: 20px;
+            background-color: #3C6851;
+        }
+    </style>
+</head>
+<body>
+<div id="header">
+    <h1>StudiRe</h1>
+</div>
+<div id="content">
+    <form method="POST" action="j_security_check">
+        <table>
+            <tbody>
+            <tr>
+                <td>
+                    <label for="username">Email</label>
+                </td>
+                <td>
+                    <input id="username" name="j_username"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="password">Passwort</label>
+                </td>
+                <td>
+                    <input id="password" type="password" name="j_password"/>
+                </td>
+            </tr>
+            <tr>
+                <td/>
+                <td>
+                    <input type="submit" value="Anmelden"/>
+                </td>
+            </tr>
+            </tbody>
+
+        </table>
+    </form>
+</div>
+<div id="footer">
+    <h3>Autor: Fabian Untermoser</h3>
+    <h3>E-Mail: funtermoser@tsn.at</h3>
+</div>
+</body>
+</html>
+

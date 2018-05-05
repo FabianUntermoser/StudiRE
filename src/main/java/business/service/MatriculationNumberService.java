@@ -1,14 +1,16 @@
-package business;
+package business.service;
 
 import business.domain.NextMatriculationNumberGenerator;
 import business.domain.Student;
 
 import javax.annotation.PostConstruct;
+import javax.annotation.security.RolesAllowed;
 import javax.ejb.Singleton;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 
+@RolesAllowed("Teacher")
 @Singleton
 public class MatriculationNumberService {
 
