@@ -4,6 +4,5 @@ public class Pages {
     public static final String
             EDIT_PAGE = "edit",
             INDEX_PAGE = "index",
-            LIST_PAGE = "list",
-            SEARCH_PAGE = "search";
+            LIST_PAGE = "list";
 }

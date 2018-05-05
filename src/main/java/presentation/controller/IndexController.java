@@ -22,8 +22,4 @@ public class IndexController implements Serializable {
         return Pages.LIST_PAGE;
     }
 
-    public String searchStudents() {
-        return Pages.SEARCH_PAGE;
-    }
-
 }
