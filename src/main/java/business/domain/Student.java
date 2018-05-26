@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.validation.constraints.Email;
 
 @NamedQueries({
         @NamedQuery(name = Student.findAll, query = "SELECT s FROM Student s"),
@@ -25,15 +26,21 @@ public class Student {
 
     @Id
     private long matriculationNumber;
+
     private String firstName, lastName;
+
+    private String email;
+
     private Integer postalCode;
+
     private String street, location;
 
     public Student() {
     }
 
-    public Student(long matriculationNumber, String firstName, String lastName, Integer postalCode, String street, String location) {
+    public Student(long matriculationNumber, String email, String firstName, String lastName, Integer postalCode, String street, String location) {
         this.matriculationNumber = matriculationNumber;
+        this.email = email;
         this.firstName = firstName;
         this.lastName = lastName;
         this.postalCode = postalCode;
@@ -63,6 +70,14 @@ public class Student {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public Integer getPostalCode() {

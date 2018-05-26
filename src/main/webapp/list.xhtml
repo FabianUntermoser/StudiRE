@@ -33,6 +33,10 @@
                         <h:outputText value="#{student.firstName}"/>
                     </h:column>
                     <h:column>
+                        <f:facet name="header">E-Mail</f:facet>
+                        <h:outputText value="#{student.email}"/>
+                    </h:column>
+                    <h:column>
                         <f:facet name="header">Postleitzahl</f:facet>
                         <h:outputText value="#{student.postalCode}"/>
                     </h:column>

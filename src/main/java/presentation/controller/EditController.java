@@ -4,6 +4,7 @@ import business.domain.Student;
 import business.service.IStudentService;
 import presentation.controller.manager.StudentManager;
 import presentation.util.Pages;
+import presentation.util.Regex;
 
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
@@ -49,6 +50,14 @@ public class EditController implements Serializable {
         this.selectedStudent = selectedStudent;
     }
 
+    public String getEmailPattern() {
+        return Regex.EMAIL_PATTERN;
+    }
+
+    public Integer getMaximumPostalCodeSize() {
+        return maximumPostalCodeSize;
+    }
+
     public String create() {
         if (inAddMode) {
             studentService.addStudent(selectedStudent);
@@ -57,9 +66,5 @@ public class EditController implements Serializable {
             studentService.updateStudent(selectedStudent);
         }
         return inAddMode ? Pages.INDEX_PAGE : Pages.LIST_PAGE;
-    }
-
-    public Integer getMaximumPostalCodeSize() {
-        return maximumPostalCodeSize;
     }
 }

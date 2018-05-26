@@ -30,6 +30,16 @@
                     </h:inputText>
                     <h:message for="lastName"/>
 
+                    <h:outputLabel value="E-Mail"/>
+                    <h:inputText id="email"
+                                 value="#{editController.selectedStudent.email}"
+                                 requiredMessage="Bitte geben Sie eine E-Mail ein"
+                                 validatorMessage="Das E-Mail Format ist ungültig">
+                        <f:validateRequired/>
+                        <f:validateRegex pattern="#{editController.emailPattern}"/>
+                    </h:inputText>
+                    <h:message for="email"/>
+
                     <h:outputLabel value="Postleitzahl"/>
                     <h:inputText id="postalCode"
                                  value="#{editController.selectedStudent.postalCode}"
@@ -58,7 +68,8 @@
                     </h:inputText>
                     <h:message for="location"/>
                 </h:panelGrid>
-                <h:commandButton value="#{editController.inAddMode ? 'Anlegen' : 'Updaten'}" action="#{editController.create}"/>
+                <h:commandButton value="#{editController.inAddMode ? 'Anlegen' : 'Updaten'}"
+                                 action="#{editController.create}"/>
             </h:form>
         </ui:define>
     </ui:composition>
