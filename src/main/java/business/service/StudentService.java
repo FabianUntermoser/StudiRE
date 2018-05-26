@@ -20,6 +20,9 @@ public class StudentService implements IStudentService {
     @Inject
     private MatriculationNumberService matriculationNumberService;
 
+    @Inject
+    private EmailValidationService emailValidationService;
+
     @Override
     public List<Student> getAllStudents() {
         return StudentRepository.getStudents(entityManager);
@@ -39,7 +42,18 @@ public class StudentService implements IStudentService {
     @Override
     public void updateStudent(Student student) {
         initializeStudentMatriculationNumber(student);
+        Student oldStudent = StudentRepository.getStudentById(entityManager, student.getMatriculationNumber());
+        checkEmailValidation(oldStudent, student);
         StudentRepository.updateStudent(entityManager, student);
+    }
+
+    private void checkEmailValidation(Student oldStudent, Student newStudent) {
+        String oldEmail = oldStudent.getEmail();
+        String newEmail = newStudent.getEmail();
+        if (oldEmail != null && newEmail != null &&
+                !oldEmail.equals(newEmail)) {
+            emailValidationService.validateEmail(newEmail);
+        }
     }
 
     @Override

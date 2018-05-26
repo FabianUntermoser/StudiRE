@@ -4,7 +4,6 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
-import javax.validation.constraints.Email;
 
 @NamedQueries({
         @NamedQuery(name = Student.findAll, query = "SELECT s FROM Student s"),

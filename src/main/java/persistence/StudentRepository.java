@@ -13,6 +13,10 @@ public class StudentRepository {
         return query.getResultList();
     }
 
+    public static Student getStudentById(EntityManager entityManager, Long id) {
+        return entityManager.find(Student.class, id);
+    }
+
     public static void addStudent(EntityManager entityManager, Student student) {
         entityManager.persist(student);
     }
@@ -30,4 +34,5 @@ public class StudentRepository {
         query.setParameter("name", "%" + name.toLowerCase() + "%");
         return query.getResultList();
     }
+
 }
