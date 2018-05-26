@@ -5,7 +5,7 @@ import business.service.IStudentService;
 import presentation.controller.manager.StudentManager;
 import presentation.util.Pages;
 
-import javax.faces.view.ViewScoped;
+import javax.faces.bean.ViewScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 import java.io.Serializable;
