@@ -1,0 +1,1 @@
+INSERT INTO Teacher (email, password) VALUES ('admin@email.com', hash('SHA256', stringtoutf8('123'), 1));

@@ -5,10 +5,10 @@
     <datasource jndi-name="java:jboss/datasources/StudiRe"
                 pool-name="studire" enabled="true"
                 use-java-context="true">
-        <connection-url>jdbc:h2:file:~/data/StudiRe</connection-url>
+        <!--<connection-url>jdbc:h2:file:~/data/StudiRe</connection-url>-->
         <!--When Using H2 Database in Server Mode with:-->
         <!--java -cp %JBOSS_HOME%/modules/system/layers/base/com/h2database/h2/main/h2-1.4.193.jar org.h2.tools.Server-->
-        <!--<connection-url>jdbc:h2:tcp://localhost/~/data/StudiRe</connection-url>-->
+        <connection-url>jdbc:h2:tcp://localhost/~/data/StudiRe</connection-url>
         <driver>h2</driver>
         <security>
             <user-name>sa</user-name>
