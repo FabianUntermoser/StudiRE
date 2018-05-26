@@ -2,23 +2,47 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
-<f:view contracts="default">
-    <ui:composition template="/template.xhtml">
-        <ui:define name="content">
-            <b style="color:red;">Anmelden fehlgeschlagen</b>
-            <form method="POST" action="j_security_check">
-                <h:panelGrid columns="2">
-                    <h:outputLabel value="Email"/>
-                    <input type="text" name="j_username"/>
-                    <h:outputLabel value="Passwort"/>
-                    <input type="password" name="j_password"/>
-                </h:panelGrid>
-                <input type="submit" value="Anmelden"/>
-            </form>
-        </ui:define>
-    </ui:composition>
-</f:view>
+      xmlns:h="http://java.sun.com/jsf/html">
+<head>
+    <title>StudiRe</title>
+    <meta charset="UTF-8"/>
+    <style type="text/css">
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        #header {
+            padding: 20px;
+            background-color: #92F4C5;
+        }
+
+        #footer {
+            padding: 20px;
+            background-color: #3C6851;
+        }
+    </style>
+</head>
+<body>
+<div id="header">
+    <h1>StudiRe</h1>
+</div>
+<div id="content">
+    <b style="color:red;">Anmelden fehlgeschlagen</b>
+    <form method="POST" action="j_security_check">
+        <h:panelGrid columns="2">
+            <h:outputLabel value="Email"/>
+            <h:inputText type="text" name="j_username"/>
+            <h:outputLabel value="Passwort"/>
+            <h:inputText type="password" name="j_password"/>
+        </h:panelGrid>
+        <input type="submit" value="Anmelden"/>
+    </form>
+</div>
+<div id="footer">
+    <h3>Autor: Fabian Untermoser</h3>
+    <h3>E-Mail: funtermoser@tsn.at</h3>
+</div>
+</body>
 </html>
+
