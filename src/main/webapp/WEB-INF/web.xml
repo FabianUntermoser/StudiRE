@@ -22,6 +22,10 @@
             <web-resource-name>teacher</web-resource-name>
             <url-pattern>/*</url-pattern>
         </web-resource-collection>
+        <web-resource-collection>
+            <web-resource-name>REST access for teacher</web-resource-name>
+            <url-pattern>/rest/teacher/*</url-pattern>
+        </web-resource-collection>
         <auth-constraint>
             <role-name>Teacher</role-name>
         </auth-constraint>
@@ -29,4 +33,9 @@
             <transport-guarantee>CONFIDENTIAL</transport-guarantee>
         </user-data-constraint>
     </security-constraint>
+
+    <servlet-mapping>
+        <servlet-name>javax.ws.rs.core.Application</servlet-name>
+        <url-pattern>/rest/*</url-pattern>
+    </servlet-mapping>
 </web-app>
